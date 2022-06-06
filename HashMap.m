@@ -1,6 +1,20 @@
 classdef HashMap < handle
-    %MAP Summary of this class goes here
-    %   Detailed explanation goes here
+    %HASHMAP Simple hash map utility class that offers benefits over MATLAB's
+    %built in container.Map()
+    %
+    % HashMap will allow any data type as keys or values in the map and
+    % allows you to mix or match the data types of keys and values.
+    % 
+    % Ex. map = HashMap()
+    % map.set('a','b')
+    % map.get('a') -> 'b'
+    % map.has('a') -> True
+    % map.delete('a')
+    % map.keys() -> {}
+    % 
+    % map = HashMap({'a','b'},{'c','d'})
+    % map.size -> 2
+    % map.values() -> {'b','d'}
     
     properties
         size = 0;
@@ -162,18 +176,20 @@ classdef HashMap < handle
             if obj.has(key)
                % proceed with object deletion
                idx = obj.getIndex(key);
-               entry = obj.mapArray(idx);
+               entry = obj.mapArray{idx};
                
                % Multiple entries at index
-               if length(entry) > 1
-                   for i = 1:length(entry)
-                        if strcmp(key,val{i}{1})
-                            val = val{i}{2};
+               if length(entry) >= 1
+                    for i = 1:length(entry)
+                        if isequal(key,entry{i}{1})
+                            obj.mapArray{idx}(i) = [];
+                            obj.size = obj.size - 1;
                             return
                         end
                     end
                else
                    obj.mapArray(idx) = [];
+                   obj.size = obj.size - 1;
                end
             else
                 throw(MException(...

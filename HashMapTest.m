@@ -166,6 +166,17 @@ classdef HashMapTest < matlab.unittest.TestCase
             
         end
         
+        function basicDelete(testCase)
+            
+            map = HashMap(testCase.basicData{1},testCase.basicData{2});
+            testCase.verifyEqual(map.size,2);
+  
+            map.delete('Key1');
+            testCase.verifyEqual(map.size,1);
+            testCase.verifyEqual(map.has('Key1'),false);
+            
+        end
+        
     end
     
 end

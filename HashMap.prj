@@ -1,0 +1,100 @@
+<deployment-project plugin="plugin.toolbox" plugin-version="1.0">
+  <configuration file="C:\Repositories\GitRepos\matlab-hashmap\HashMap.prj" location="C:\Repositories\GitRepos\matlab-hashmap" name="HashMap" target="target.toolbox" target-name="Package Toolbox">
+    <param.appname>HashMap</param.appname>
+    <param.authnamewatermark>Derek Black</param.authnamewatermark>
+    <param.email />
+    <param.company />
+    <param.summary>Pure MATLAB hash map implementation</param.summary>
+    <param.description>Implements a hash map in pure MATLAB that expands upon the capabilities of MATLAB's containers.Map() function by allowing mixed data types, as well as, function handles, class handles, and structs as valid keys.
+Functions: has, get, set, delete, keys, values</param.description>
+    <param.screenshot>C:\Users\DJBLACK\OneDrive - Altec Ind\Pictures\hashmap.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.output>${PROJECT_ROOT}\HashMap.mltbx</param.output>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.guid>fc08ab55-3d70-42f7-8d42-0941720355fc</param.guid>
+    <param.exclude.filters>% List files contained in your toolbox folder that you would like to exclude
+% from packaging.  Excludes should be listed relative to the toolbox folder.
+% Some examples of how to specify excludes are provided below:
+%
+% A single file in the toolbox folder:
+% .svn
+%
+% A single file in a subfolder of the toolbox folder:
+% example/.svn
+%
+% All files in a subfolder of the toolbox folder:
+% example/*
+%
+% All files of a certain name in all subfolders of the toolbox folder:
+% **/.svn
+%
+% All files matching a pattern in all subfolders of the toolbox folder:
+% **/*.bak
+%
+.git
+HashMap.asv
+README.asv
+runTests.asv</param.exclude.filters>
+    <param.examples />
+    <param.demosxml />
+    <param.apps />
+    <param.docs />
+    <param.matlabpath.excludes />
+    <param.javaclasspath.excludes />
+    <unset>
+      <param.email />
+      <param.company />
+      <param.version />
+      <param.output />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.examples />
+      <param.demosxml />
+      <param.apps />
+      <param.docs />
+      <param.matlabpath.excludes />
+      <param.javaclasspath.excludes />
+    </unset>
+    <fileset.rootdir>
+      <file>C:\Repositories\GitRepos\matlab-hashmap</file>
+    </fileset.rootdir>
+    <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\DataHash.m</file>
+      <file>${PROJECT_ROOT}\HashMap.m</file>
+      <file>${PROJECT_ROOT}\HashMapTest.m</file>
+      <file>${PROJECT_ROOT}\README.md</file>
+      <file>${PROJECT_ROOT}\runTests.m</file>
+    </fileset.rootfiles>
+    <fileset.depfun.included />
+    <fileset.depfun.excluded />
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Repositories\GitRepos\matlab-hashmap" name="HashMap.mltbx" optional="false">C:\Repositories\GitRepos\matlab-hashmap\HashMap.mltbx</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2017a</root>
+      <toolboxes />
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.2</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

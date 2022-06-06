@@ -120,15 +120,15 @@ classdef HashMap < handle
             val = obj.mapArray{obj.getIndex(key)};
             % Check if we have multiple entries stored in table (this is
             % worst case condition)
-            if length(val) > 1
+            if length(val) >= 1
                 for i = 1:length(val)
-                    if strcmp(key,val{i}{1})
+                    if isequal(key,val{i}{1})
                         val = val{i}{2};
                         return
                     end
                 end
                 
-                % Key didn't exist in list, need to return empty list
+                % Key didn't exist in list
                 throw(MException(...
                    'HashMap:NoKey',...
                    'No Key: Could not find key in map')...
@@ -156,6 +156,34 @@ classdef HashMap < handle
             bool = ~isempty(ret);
         end
         
+        function delete(obj,key)
+            
+            % Check that we have the key in map
+            if obj.has(key)
+               % proceed with object deletion
+               idx = obj.getIndex(key);
+               entry = obj.mapArray(idx);
+               
+               % Multiple entries at index
+               if length(entry) > 1
+                   for i = 1:length(entry)
+                        if strcmp(key,val{i}{1})
+                            val = val{i}{2};
+                            return
+                        end
+                    end
+               else
+                   obj.mapArray(idx) = [];
+               end
+            else
+                throw(MException(...
+                    'HashMap:NoKey',...
+                    'No Key: Could not find key in map'...
+                ))
+            end
+            
+        end
+        
     end
     
     methods (Access = private)
@@ -165,7 +193,7 @@ classdef HashMap < handle
             idx = mod(hash,obj.buckets-1) + 1;
         end
         
-        function hashSum = hash(key)
+        function hashSum = hash(obj,key)
             hashSum = DataHash(key,'HEX');
             hashSum = hex2dec(hashSum);
         end

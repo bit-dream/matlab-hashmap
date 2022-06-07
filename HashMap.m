@@ -121,7 +121,7 @@ classdef HashMap < handle
             idx = obj.getIndex(key);
             if length(obj.mapArray{idx}) > 1
                 for i = 1:length(obj.mapArray{idx})
-                    if strcmp(key,obj.mapArray{idx}{i}{1})
+                    if isequal(key,obj.mapArray{idx}{i}{1})
                         obj.mapArray{idx}{i}{2} = value;
                         return
                     end

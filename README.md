@@ -10,6 +10,17 @@ This implementation gives you more of a modern implementation of hash maps, allo
 of data types, functions/structs/classes as map keys, and concise language to improve
 code readability.
 
+### General
+HashMap will auto rehash as new data gets added. Rehash determination is based on number of
+entries in the map and current number of buckets allocated to the internal array.
+
+A psudo seperate chaining takes place when hash collisions occur (psudo as in not using a
+more traditional linked list as storage).
+
+### Time and space complexity
+Look up - Best/Average case O(1), worst case O(N) [when hash function produces key collisions]
+Space - O(N) array increases linearly with number of dictionary entries
+
 ## Installation
 Double click on the toolbox file (HashMap.mtlbx) or drag the file into the MATLAB command
 window. This will install the class globally within MATLAB.

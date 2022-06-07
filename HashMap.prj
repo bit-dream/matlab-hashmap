@@ -8,7 +8,7 @@
     <param.description>Implements a hash map in pure MATLAB that expands upon the capabilities of MATLAB's containers.Map() function by allowing mixed data types, as well as, function handles, class handles, and structs as valid keys.
 Functions: has, get, set, delete, keys, values</param.description>
     <param.screenshot>C:\Users\DJBLACK\OneDrive - Altec Ind\Pictures\hashmap.png</param.screenshot>
-    <param.version>1.0</param.version>
+    <param.version>1.0.1</param.version>
     <param.output>${PROJECT_ROOT}\HashMap.mltbx</param.output>
     <param.products.name />
     <param.products.id />
@@ -47,7 +47,6 @@ runTests.asv</param.exclude.filters>
     <unset>
       <param.email />
       <param.company />
-      <param.version />
       <param.output />
       <param.products.name />
       <param.products.id />
@@ -64,11 +63,11 @@ runTests.asv</param.exclude.filters>
       <file>C:\Repositories\GitRepos\matlab-hashmap</file>
     </fileset.rootdir>
     <fileset.rootfiles>
+      <file>${PROJECT_ROOT}\+HashMapTests</file>
+      <file>${PROJECT_ROOT}\Contents.m</file>
       <file>${PROJECT_ROOT}\DataHash.m</file>
       <file>${PROJECT_ROOT}\HashMap.m</file>
-      <file>${PROJECT_ROOT}\HashMapTest.m</file>
       <file>${PROJECT_ROOT}\README.md</file>
-      <file>${PROJECT_ROOT}\runTests.m</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />

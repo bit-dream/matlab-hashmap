@@ -86,10 +86,10 @@ map.size
 `
 map.keys()
 `
-> 'c'    'b'
+> 'c'    'b'    'd'
 
 ### **collect values**
 `
 map.values()
 `
-> 3,    2
+> 3,    2,     4
